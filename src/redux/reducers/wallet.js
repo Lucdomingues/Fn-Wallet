@@ -7,6 +7,6 @@
 //   },
 // };
 
-// const wallet = (state = INITIAL_STATE, action) => state.wallet;
+// const wallet = (state = INITIAL_STATE, action) => state;
 
 // export default wallet;
