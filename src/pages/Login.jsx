@@ -37,7 +37,6 @@ class Login extends React.Component {
     event.preventDefault();
     const { email } = this.state;
     const { dispatchUser, history } = this.props;
-
     dispatchUser(email);
     history.push('/carteira');
   };
@@ -47,19 +46,27 @@ class Login extends React.Component {
     return (
       <section>
         <form onSubmit={ this.handleSubmit }>
-          <input
-            type="text"
-            data-testid="email-input"
-            id="email"
-            onChange={ this.handleUser }
-          />
-          <input
-            type="password"
-            name="password-input"
-            id="password"
-            data-testid="password-input"
-            onChange={ this.handleUser }
-          />
+          <label htmlFor="email">
+            Email:
+            <input
+              type="text"
+              data-testid="email-input"
+              id="email"
+              placeholder="Email"
+              onChange={ this.handleUser }
+            />
+          </label>
+          <label htmlFor="password">
+            Password:
+            <input
+              type="password"
+              name="password-input"
+              id="password"
+              placeholder="Password"
+              data-testid="password-input"
+              onChange={ this.handleUser }
+            />
+          </label>
           <button
             type="submit"
             disabled={ isValidation }
