@@ -1,10 +1,17 @@
-import { SUCESS_REQUIRE, FAILURE_REQUIRE } from '../actions';
+import {
+  SUCESS_REQUIRE,
+  FAILURE_REQUIRE,
+  FORM_EXPENSES,
+  SUCESS_REQUIRE_TXA,
+} from '../actions';
 
 const INITIAL_STATE = {
   currencies: [], // array de string
   expenses: [], // array de objetos, com cada objeto tendo as chaves id, value, currency, method, tag, description e exchangeRates
   editor: false, // valor booleano que indica de uma despesa está sendo editada
   idToEdit: 0, // valor numérico que armazena o id da despesa que esta sendo editada
+  txa: {},
+  soma: 0,
 };
 
 const walletReducer = (state = INITIAL_STATE, action) => {
@@ -17,6 +24,18 @@ const walletReducer = (state = INITIAL_STATE, action) => {
   case FAILURE_REQUIRE:
     return {
       error: action.error,
+    };
+  case FORM_EXPENSES:
+    return {
+      ...state,
+      expenses: [
+        ...state.expenses, action.payload,
+      ],
+    };
+  case SUCESS_REQUIRE_TXA:
+    return {
+      ...state,
+      txa: action.payload,
     };
   default:
     return state;
