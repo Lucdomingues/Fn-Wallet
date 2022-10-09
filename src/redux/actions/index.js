@@ -45,7 +45,6 @@ export function fecthIsRequireTaxa() {
     try {
       const request = await fetch('https://economia.awesomeapi.com.br/json/all')
         .then((requestApi) => requestApi.json());
-      delete request.USDT;
       return dispatch(sucessRequireTxa(request));
     } catch (error) {
       return dispatch(failureRequire(error));

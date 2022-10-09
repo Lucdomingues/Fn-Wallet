@@ -17,9 +17,9 @@ class WalletForm extends Component {
     await dispatchApi();
   }
 
-  handleChange = ({ target: { id, value } }) => {
+  handleChange = ({ target: { name, value } }) => {
     this.setState({
-      [id]: value,
+      [name]: value,
     });
   };
 
@@ -68,14 +68,15 @@ class WalletForm extends Component {
             Expenses:
             <input
               type="text"
-              id="despesas"
+              name="despesas"
+              id="expenses"
               value={ despesas }
               placeholder="Expenses"
               data-testid="value-input"
               onChange={ this.handleChange }
             />
           </label>
-          <label htmlFor="description-expenses">
+          <label htmlFor="description">
             Description:
             <textarea
               name="description"
@@ -89,7 +90,7 @@ class WalletForm extends Component {
             />
           </label>
           <select
-            name="cambio"
+            name="currency"
             id="currency"
             value={ currency }
             data-testid="currency-input"
@@ -110,7 +111,7 @@ class WalletForm extends Component {
           >
             <option value="Dinheiro">Dinheiro</option>
             <option value="Cartão de crédito">Cartão de crédito</option>
-            <option value="Cartão de crédito">Cartão de débito</option>
+            <option value="Cartão de débito">Cartão de débito</option>
           </select>
           <select
             name="tag"

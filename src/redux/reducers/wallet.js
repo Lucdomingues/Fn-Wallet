@@ -11,7 +11,6 @@ const INITIAL_STATE = {
   editor: false, // valor booleano que indica de uma despesa está sendo editada
   idToEdit: 0, // valor numérico que armazena o id da despesa que esta sendo editada
   txa: {},
-  soma: 0,
 };
 
 const walletReducer = (state = INITIAL_STATE, action) => {
