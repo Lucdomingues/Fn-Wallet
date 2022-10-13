@@ -3,6 +3,7 @@ import {
   FAILURE_REQUIRE,
   FORM_EXPENSES,
   SUCESS_REQUIRE_TXA,
+  DELETE_INFO,
 } from '../actions';
 
 const INITIAL_STATE = {
@@ -35,6 +36,11 @@ const walletReducer = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       txa: action.payload,
+    };
+  case DELETE_INFO:
+    return {
+      ...state,
+      expenses: [...action.id],
     };
   default:
     return state;

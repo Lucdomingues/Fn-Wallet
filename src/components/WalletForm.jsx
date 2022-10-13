@@ -53,8 +53,8 @@ class WalletForm extends Component {
       despesas: '',
       description: '',
       currency: 'USD',
-      pagamento: 'Alimentação',
-      tag: 'Dinheiro',
+      pagamento: 'Dinheiro',
+      tag: 'Alimentação',
     });
   };
 
