@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
+import { MdEmail, MdLock } from 'react-icons/md';
 import { sumbitEmail } from '../redux/actions';
+import './login.css';
 
 class Login extends React.Component {
   state = {
@@ -44,36 +46,44 @@ class Login extends React.Component {
   render() {
     const { isValidation } = this.state;
     return (
-      <section>
+      <section className="login">
+        <div className="login-logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/189/189709.png" alt="logo-wallet" />
+        </div>
         <form onSubmit={ this.handleSubmit }>
-          <label htmlFor="email">
-            Email:
-            <input
-              type="text"
-              data-testid="email-input"
-              name="email"
-              id="email"
-              placeholder="Email"
-              onChange={ this.handleUser }
-            />
-          </label>
-          <label htmlFor="password">
-            Password:
-            <input
-              type="password"
-              name="password-input"
-              id="password"
-              placeholder="Password"
-              data-testid="password-input"
-              onChange={ this.handleUser }
-            />
-          </label>
-          <button
-            type="submit"
-            disabled={ isValidation }
-          >
-            Entrar
-          </button>
+          <div className="login-right">
+            <h1>FnWallet</h1>
+
+            <div className="login-loginInputEmail">
+              <MdEmail />
+              <input
+                type="text"
+                data-testid="email-input"
+                name="email"
+                id="email"
+                placeholder="Digite um email"
+                onChange={ this.handleUser }
+              />
+            </div>
+
+            <div className="login-loginInputPassword">
+              <MdLock />
+              <input
+                type="password"
+                name="password-input"
+                id="password"
+                placeholder="Digite sua senha"
+                data-testid="password-input"
+                onChange={ this.handleUser }
+              />
+            </div>
+            <button
+              type="submit"
+              disabled={ isValidation }
+            >
+              Entrar
+            </button>
+          </div>
         </form>
       </section>
     );

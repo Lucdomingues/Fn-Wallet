@@ -9,8 +9,8 @@ describe('Test Components Login', () => {
   it('checks if inputs and button are rendered', () => {
     renderWithRouterAndRedux(<App />);
 
-    const inputEmail = screen.getByRole('textbox', { name: /email/i });
-    const inputPassword = screen.getByLabelText(/password/i);
+    const inputEmail = screen.getByPlaceholderText(/digite um email/i);
+    const inputPassword = screen.getByPlaceholderText(/digite sua senha/i);
     const buttonLogin = screen.getByRole('button', { name: /Entrar/i });
 
     expect(inputEmail).toBeInTheDocument();
@@ -23,7 +23,7 @@ describe('Test Components Login', () => {
 
     renderWithRouterAndRedux(<App />);
 
-    const inputEmail = screen.getByRole('textbox', { name: /email/i });
+    const inputEmail = screen.getByPlaceholderText(/digite um email/i);
 
     userEvent.type(inputEmail, emailMock);
 
