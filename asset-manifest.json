@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Fn-Wallet.github.io/static/css/main.6b2c71a8.css",
+    "main.js": "/Fn-Wallet.github.io/static/js/main.25a2fd53.js",
+    "index.html": "/Fn-Wallet.github.io/index.html",
+    "main.6b2c71a8.css.map": "/Fn-Wallet.github.io/static/css/main.6b2c71a8.css.map",
+    "main.25a2fd53.js.map": "/Fn-Wallet.github.io/static/js/main.25a2fd53.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6b2c71a8.css",
+    "static/js/main.25a2fd53.js"
+  ]
+}
