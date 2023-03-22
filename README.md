@@ -101,7 +101,7 @@ Para fazer um **COPY** desse projeto em sua máquina localmente, siga às etapas
 
   - Use o comando: 
    ```sh
-   git clone git@github.com:Lucdomingues/Frontend-Online-Store.git
+   git clone git@github.com:Lucdomingues/Fn-Wallet.github.io.git
    ```
   2. Instale as dependências
    ```sh
